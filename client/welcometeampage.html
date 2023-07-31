@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome with my team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .welcomeworkspace {
+            width: 55vw;
+            height: 70vh;
+            background-color: #3E4FA4;
+            margin-top: 14.2vh;
+            margin-left: 9vw;
+            border-radius: 1vw;
+            position: absolute;
+        }
+
+        .welcomeworkspacetext {
+            position: absolute;
+            margin-left: 2vw;
+            font-size: 2.2vw;
+            font-weight: 700;
+            position: absolute;
+            margin-top: 2vh;
+        }
+
+        .welcomeanothertextbox {
+            position: absolute;
+            margin-left: 6vw;
+            margin-top: 13vh;
+            opacity: 0.6;
+            font-size: 1.5vw;
+            font-weight: 500;
+            position: absolute;
+        }
+
+        .welcomeworkspacebox {
+            position: absolute;
+            margin-left: 0.2vw;
+            width: 25vw;
+            margin-top: 10vh;
+            font-size:2.5vw;
+            font-weight: 800;
+            position: absolute;
+        }
+
+        .welcomeworkspaceinput {
+            position: absolute;
+            margin-left: 12vw;
+            width: 30vw;
+            margin-top: 38vh;
+            font-size: 1.5em;
+            font-weight: 800;
+            position: absolute;
+            border-style: none;
+            background-color: lightcoral;
+            border: 0.1vw solid blue;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            cursor: text;
+        }
+
+        .welcomecontinue {
+            width: 10vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 52vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 5.2vw;
+            color: black;
+            font-size: 1.2vw;
+            font-weight: 600;
+            position: absolute;
+        }
+
+        .welcomecontinue:hover {
+            transition: 1s ease-in-out;
+            background: #02070b;
+            color: white;
+        }
+
+        .link1 {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .Marketing {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 16vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.5vw;
+            position: absolute;
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        .Finance{
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 28vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.5vw;
+            position: absolute;
+            animation: slideInRight 0.7s ease-out;
+        }
+
+        .HR {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 39.5vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.5vw;
+            position: absolute;
+            animation: slideInRight 0.9s ease-out;
+        }
+
+        .sales {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 52vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.5vw;
+            position: absolute;
+            animation: slideInRight 1.1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .rightbox {
+            width: 22vw;
+            display: inline-block;
+            position: absolute;
+            margin-left: 70vw;
+            height: 68vh;
+            margin-top: 15vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcomeworkspace">
+        <p class="welcomeworkspacetext">Welcome to "to.do" Workspace</p>
+        <div class="welcomeworkspacebox"><pre class="welcomeworkspacebox">
+    In your workspace 
+    each team, project 
+    or process gets a 
+    board</pre></div>
+        <div class="welcomeanothertextbox"><p class="welcomeanothertext">HOW IT WORKS</p></div>
+       
+        <button class="welcomecontinue">
+            <a href="templatepage.html">
+                <span class="link1"></span>
+            </a>
+            Continue
+        </button>
+    </div>
+    <div class="rightbox">
+        <button class="Marketing">
+            <p class="Marketingtext">Marketing</p>
+        </button>
+        <button class="Finance">
+            <p class="Financetext"> Finance</p>
+        </button>
+        <button class="HR">
+            <p class="HRtext">HR</p>
+        </button>
+        <button class="sales">
+            <p class="salestext">sales</p>
+        </button>
+    </div>
+</body>
+</html>

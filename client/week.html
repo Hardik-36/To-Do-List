@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        #settings-button {
+            padding: 0.5vw 0.8vw;
+            display: inline-block;
+            background-color: #007bff;
+            background: transparent;
+            color: #0c0707;
+            border: 0.15vw solid black;
+            border-radius: 80vw;
+            width: 2.8vw;
+            height: 6vh;
+            cursor: pointer;
+            margin-top: 5.5vh;
+            margin-left: 1.1vw;
+            position: absolute;
+        }
+
+        #settings-button i {
+            margin-right: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 20vw;
+
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            margin-top: 11vh;
+            margin-left: 2vw;
+            border-radius: 2vw;
+            height: 29vh;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.5em;
+            margin: 1vw;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .custname {
+            display: inline-block;
+            margin-left: 4.7vw;
+            margin-top: 7.2vh;
+            position: absolute;
+            font-size: 1.7vw;
+
+        }
+
+        .custn {
+            position: absolute;
+            margin-left: 4.7vw;
+            margin-top: 8.5vh;
+
+        }
+
+        .days {
+            margin-top: 18vh;
+        }
+
+        .fa-calendar {
+            position: absolute;
+            margin-top: .1vh;
+            margin-left: 1.4vw;
+        }
+
+        .fa-cloud {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .fa-bars {
+            margin-top: 13vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .mylist {
+            margin-top: 40vh;
+        }
+
+        .tags {
+            margin-top: 30vh;
+        }
+
+        .mydays {
+            position: absolute;
+            margin-left: 4vw;
+            margin-top: 0.1vh;
+            font-size: 1.5em;
+        }
+
+        .sevenday {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 4vw;
+            font-size: 1.5em;
+        }
+
+        .mytask {
+            margin-left: 4vw;
+            margin-top: 13vh;
+            position: absolute;
+            font-size: 1.5em;
+        }
+
+        .mylisttext {
+            margin-left: 1.4vw;
+            font-size: 1.8em;
+        }
+
+        .personaltext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 1.5vh;
+            position: absolute;
+        }
+
+        .worktext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .grocerytext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 12.5vh;
+            position: absolute;
+        }
+
+        .tags {
+            margin-top: 22vh;
+            margin-left: 1.4vw;
+        }
+
+        .prioritytext {
+            /* margin-left: 1.4vw; */
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .tagtext {
+            font-size: 1.8em;
+
+            position: absolute;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftbox {
+            display: inline-block;
+            width: 18vw;
+            height: 99.9vh;
+            background-color: rgb(240, 240, 244);
+            position: absolute;
+            background-color: white;
+            background-color: rgb(40, 116, 166);
+            color: white;
+        }
+
+        .weektaskbox {
+            width: 22vw;
+            background-color: lightblue;
+            display: inline-block;
+            position: absolute;
+            margin-left: 20vw;
+            height: 80vh;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            transition: transform 0.3s ease;
+        }
+
+        .todaytask1 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 16vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .todaytask1:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+            cursor: pointer;
+
+        }
+
+        .todaytask2 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 28vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .todaytask2:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+            cursor: pointer;
+
+        }
+
+        .todaytask3 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 39.5vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .todaytask3:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            height: 6.8vh;
+
+            /* margin-left: 1vw; */
+            transition: 1s ease-in-out;
+            cursor: pointer;
+
+        }
+
+        .todaytask4 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 52vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .todaytask4:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+            cursor: pointer;
+
+
+        }
+
+        .weektaskbox:hover {
+            transform: scale(1.1);
+
+        }
+
+        .todayy {
+            height: 2vh;
+            width: 8vw;
+            font-size: 1.9em;
+            margin-left: 2vw;
+            margin-top: 3.5vw;
+            position: absolute;
+            animation: fadeAnimation 4s infinite;
+        }
+
+        @keyframes fadeAnimation {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            25%,
+            75% {
+                opacity: 1;
+            }
+        }
+
+        .tommorow1 {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 45vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .tommorowtext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+
+        .Tommorowplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+
+        .sunday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 65vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .sundaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+
+        .sundayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+
+        .monday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 85vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .mondaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+
+        .mondayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+
+        .tuesday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 105vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .tuesdaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+
+        .tuesdayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+
+        .wednesday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 125vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .wednesdaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+
+        }
+
+        .wednesdayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+
+        .thursday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 145vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .thursdaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+
+        .thursdayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+
+        .friday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 165vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .fridaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+
+        .fridayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+        input[type='text']::placeholder {
+            text-align: center;
+            color: rgb(26, 23, 19);
+            font-size: 1.3vw;
+            opacity:0.4;
+
+        }
+
+        .saturday {
+            border: 0.2vw solid black;
+            width: 17vw;
+            height: 14vh;
+            position: absolute;
+            margin-left: 185vw;
+            margin-top: 10vh;
+            border-radius: 1vw;
+            background-color: lightblue;
+            transition: transform 0.3s ease;
+        }
+
+        .saturdaytext {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 0.5vh;
+            font-size: 1.5em;
+
+        }
+        .signout-prompt {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .signout-prompt h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .signout-prompt button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .signout-prompt button:hover {
+            background-color: #0056b3;
+        }
+
+        .saturdayplaceholder {
+            position: absolute;
+            margin-left: 2vw;
+            margin-top: 6vh;
+            height: 4vh;
+            border-radius: 0.5vw;
+        }
+        .tommorow1:hover {
+            transform: scale(1.1);
+
+        }
+        .sunday:hover {
+            transform: scale(1.1);
+
+        }
+        .monday:hover {
+            transform: scale(1.1);
+
+        }
+        .tuesday:hover {
+            transform: scale(1.1);
+
+        }
+        .wednesday:hover {
+            transform: scale(1.1);
+
+        }
+        .thursday:hover {
+            transform: scale(1.1);
+
+        }
+        .friday:hover {
+            transform: scale(1.1);
+
+        }
+        .saturday:hover {
+            transform: scale(1.1);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leftbox">
+        <div class="setting">
+            <div class="dropdown">
+                <button id="settings-button">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">My Profile</a>
+                    <a href="#">About</a>
+                    <a href="#" id="signout-link">Signout</a>                    
+                </div>
+            </div>
+
+            <h4 class="custname">Hardik</h4>
+            <p class="custn">Free Plan</p>
+        </div>
+        
+        <!-- now my day div is starting -->
+        <div class="days">
+            <i class="fa fa-calendar " style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="myday">
+                <p class="mydays">My day</p>
+
+            </div>
+            <i class="fa fa-cloud" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="week">
+                <p class="sevenday">Next 7 days </p>
+            </div>
+            <i class="fa fa-bars" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="alltask">
+                <p class="mytask">All my tasks</p>
+            </div>
+
+        </div>
+        
+        <!-- my list column -->
+        <div class="mylist">
+            <h3 class="mylisttext">My lists</h3>
+            <div class="personal">
+                <p class="personaltext">Personal</p>
+            </div>
+            <div class="work">
+                <p class="worktext">Work</p>
+            </div>
+            <div class="grocery">
+                <p class="grocerytext">Grocery list</p>
+            </div>
+        </div>
+        <!-- my tags column -->
+        <div class="tags">
+            <h3 class="tagtext">Tags</h3>
+            <div class="priority">
+                <p class="prioritytext">Priority</p>
+            </div>
+        </div>
+    </div>
+    <div class="signout-prompt" id="signout-prompt">
+        <h3>Are you sure you want to sign out?</h3>
+        <button id="signout-button">Sign out</button>
+    </div>
+
+
+
+    <div class="weektaskbox">
+        <p class="todayy">Today</p>
+        <button class="todaytask1">
+            <p class="todaytask1text1">Task1</p>
+        </button>
+        <button class="todaytask2">
+            <p class="todaytask1text2"> Task2</p>
+        </button>
+        <button class="todaytask3">
+            <p class="todaytask1text3">Task3</p>
+        </button>
+        <button class="todaytask4">
+            <p class="todaytask1text4">Task4</p>
+        </button>
+
+
+
+
+
+
+
+    </div>
+    <div class="tommorow1">
+        <p class="tommorowtext">Tommorow</p>
+        <input type="text" placeholder="Add task" class="Tommorowplaceholder">
+    </div>
+    <div class="sunday">
+        <p class="sundaytext">Sunday</p>
+        <input type="text" placeholder="Add task" class="sundayplaceholder">
+    </div>
+    <div class="monday">
+        <p class="mondaytext">Monday</p>
+        <input type="text" placeholder="Add task" class="mondayplaceholder">
+    </div>
+    <div class="tuesday">
+        <p class="tuesdaytext">Tuesday</p>
+        <input type="text" placeholder="Add task" class="tuesdayplaceholder">
+    </div>
+    <div class="wednesday">
+        <p class="wednesdaytext">wednesday</p>
+        <input type="text" placeholder="Add task" class="wednesdayplaceholder">
+    </div>
+    <div class="thursday">
+        <p class="thursdaytext">Thursday</p>
+        <input type="text" placeholder="Add task" class="thursdayplaceholder">
+    </div>
+    <div class="friday">
+        <p class="fridaytext">Friday</p>
+        <input type="text" placeholder="Add task" class="fridayplaceholder">
+    </div>
+    <div class="saturday">
+        <p class="saturdaytext">Saturday</p>
+        <input type="text" placeholder="Add task" class="saturdayplaceholder">
+    </div>
+
+    
+
+
+
+
+
+
+</body>
+<script>
+    // JavaScript code here
+    document.getElementById("signout-link").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the link from navigating
+        document.getElementById("signout-prompt").style.display = "block"; // Display the sign-out prompt
+        
+    });
+
+    document.getElementById("signout-button").addEventListener("click", function() {
+        // Perform sign-out action here
+        window.location.href = "homepage.html";
+    });
+</script>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>withmyteam</title>
+    <style>
+        .workspace{
+            width:55vw;
+            height: 70vh;
+            background-color:#3E4FA4;
+            margin-top: 14.2vh;
+            margin-left: 22vw;
+            border-radius: 1vw;
+        }
+        .workspacetext{
+            position: absolute;
+            margin-left: 2vw;
+            font-size: 1.5em;
+            font-weight: 700;
+
+        }
+        .anothertextbox{
+            position: absolute;
+            margin-left:20.5vw ;
+            margin-top: 28vh;
+            opacity: 0.6;
+            font-size: 1.1em;
+        }
+        .workspacebox{
+            position: absolute;
+            margin-left:8vw ;
+            width: 25vw;
+            margin-top: 12vh;
+            font-size: 1.5em;
+            font-weight: 800;
+
+        }
+        .workspaceinput{ 
+            position: absolute;
+            margin-left:12vw ;
+            width: 30vw;
+            margin-top: 38vh;
+            font-size: 1.5em;
+            font-weight: 800;
+            
+            border-style: none;
+            background-color: #3E4FA4;
+            border: 0.2vw solid black;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            cursor: text;
+
+        }
+        .continue{
+            width: 10vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 62vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 42vw;
+           color: black;
+           font-size: 1.2vw;
+           font-weight: 600;
+
+        }
+        .continue:hover {
+            transition: 1s ease-in-out;
+            background: #02070b;
+            color: white;
+
+        }
+        .link1{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="workspace">
+        <p class="workspacetext">Name your workspace</p>
+        <div class="workspacebox"><p class="workspacebox">Name your workspace</p></div>
+        <div class="anothertextbox"><p class="anothertext">e.g. Nike, Stanford or the UN.</p></div>
+        <input type="text" class="workspaceinput">
+        <button class="continue">
+            <a href="welcometeampage.html">
+                <span class="link1"></span>
+            </a>
+            Continue
+        </button>
+    </div>
+</body>
+</html>

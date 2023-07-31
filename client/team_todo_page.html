@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo page</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftbox {
+            display: inline-block;
+            width: 18vw;
+            height: 99.9vh;
+            background-color: rgb(240, 240, 244);
+            position: absolute;
+            background-color: white;
+            background-color: rgb(40, 116, 166);
+            color: white;
+        }
+
+        .teammidbox {
+            width: 60vw;
+            background-color: aqua;
+            display: inline-block;
+            position: absolute;
+            margin-left: 18vw;
+            height: 99.9vh;
+            background-color: white;
+        }
+
+        .rightbox {
+            width: 22vw;
+            background-color: lightblue;
+            display: inline-block;
+            position: absolute;
+            margin-left: 78vw;
+            height: 99.9vh;
+        }
+
+        /* #settings-button {
+            padding: 0.5vw 0.8vw;
+            display: inline-block;
+            background-color: #007bff;
+            background: transparent;
+            color: #0c0707;
+            border: 0.15vw solid black;
+            border-radius: 80vw;
+            width: 2.8vw;
+            height: 6vh;
+            cursor: pointer;
+            margin-top: 5.5vh;
+            margin-left: 1.1vw;
+            position: absolute;
+        }
+
+        #settings-button i {
+            margin-right: 5px;
+        } */
+        #settings-button {
+            padding: 0.5vw 0.8vw;
+            display: inline-block;
+            background-color: #007bff;
+            background: transparent;
+            color: #0c0707;
+            border: 0.15vw solid black;
+            border-radius: 80vw;
+            width: 2.8vw;
+            height: 6vh;
+            cursor: pointer;
+            margin-top: 5.5vh;
+            margin-left: 1.1vw;
+            position: absolute;
+        }
+
+        #settings-button i {
+            margin-right: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 20vw;
+
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            margin-top: 11vh;
+            margin-left: 2vw;
+            border-radius: 2vw;
+            height: 29vh;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.5em;
+            margin: 1vw;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .custname {
+            display: inline-block;
+            margin-left: 4.7vw;
+            margin-top: 7.2vh;
+            position: absolute;
+            font-size: 1.7vw;
+
+        }
+
+        .custn {
+            position: absolute;
+            margin-left: 4.7vw;
+            margin-top: 8.5vh;
+
+        }
+
+        .days {
+            margin-top: 18vh;
+        }
+
+        .fa-calendar {
+            position: absolute;
+            margin-top: .1vh;
+            margin-left: 1.4vw;
+        }
+
+        .fa-cloud {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .fa-bars {
+            margin-top: 13vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .mylist {
+            margin-top: 40vh;
+        }
+
+        .tags {
+            margin-top: 30vh;
+        }
+
+        .mydays {
+            position: absolute;
+            margin-left: 4vw;
+            margin-top: 0.1vh;
+            font-size: 1.5em;
+        }
+
+        .sevenday {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 4vw;
+            font-size: 1.5em;
+        }
+
+        .mytask {
+            margin-left: 4vw;
+            margin-top: 13vh;
+            position: absolute;
+            font-size: 1.5em;
+        }
+
+        .mylisttext {
+            margin-left: 1.4vw;
+            font-size: 1.8em;
+        }
+
+        .personaltext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 1.5vh;
+            position: absolute;
+        }
+
+        .worktext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .grocerytext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 12.5vh;
+            position: absolute;
+        }
+
+        .tags {
+            margin-top: 22vh;
+            margin-left: 1.4vw;
+        }
+
+        .prioritytext {
+            /* margin-left: 1.4vw; */
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .tagtext {
+            font-size: 1.8em;
+
+            position: absolute;
+        }
+
+        .teamheadline {
+            margin-top: 7.2vh;
+            margin-left: 5vh;
+            font-size: 2em;
+            position: absolute;
+        }
+
+        .teambheadline {
+            margin-top: 13vh;
+            margin-left: 5vh;
+            font-size: 1.5em;
+            font-weight: 800;
+            color: grey;
+            opacity: 0.5;
+            position: absolute;
+
+        }
+
+        .addtask {
+            margin-top: 90vh;
+            background-color: rgb(116, 172, 228);
+            margin-left: 5vh;
+            color: white;
+            border-radius: 0.81vw;
+            height: 6vh;
+            width: 48vw;
+            font-size: 1.3vw;
+            position: absolute;
+        }
+
+        input[type='text']::placeholder {
+            text-align: center;
+            color: antiquewhite;
+            font-size: 1.3vw;
+
+        }
+
+        .teamyesterday {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 16vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .teamyesterday:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+
+        }
+
+        .teamyesterday1 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 28vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .teamyesterday1:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+
+        }
+
+        .teamyesterday2 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 39.5vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1em;
+            position: absolute;
+
+        }
+
+        .teamyesterday2:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.1em;
+            height: 6.8vh;
+
+            /* margin-left: 1vw; */
+            transition: 1s ease-in-out;
+
+        }
+
+        .teamyesterday3 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 52vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .teamyesterday3:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+
+        }
+        .link2{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+        }
+        .teamrightbox {
+            width: 22vw;
+            background-color: lightblue;
+            display: inline-block;
+            position: absolute;
+            margin-left: 78vw;
+            height: 99.9vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leftbox">
+        <div class="setting">
+            <div class="dropdown">
+                <button id="settings-button">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">My Profile</a>
+                    <a href="#">About</a>
+                    <a href="#">Signout</a>
+                </div>
+            </div>
+
+            <h4 class="custname">Hardik</h4>
+            <p class="custn">Free Plan</p>
+        </div>
+        <!-- now my day div is starting -->
+        <div class="days">
+            <i class="fa fa-calendar " style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="myday">
+                <p class="mydays">My day</p>
+
+            </div>
+            <i class="fa fa-cloud" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="week">
+                <p class="sevenday"> <a href="week.html"><span class="link2"></span></a>
+                    Next 7 days </p>
+            </div>
+            <i class="fa fa-bars" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="alltask">
+                <p class="mytask">All my tasks</p>
+            </div>
+
+        </div>
+        <!-- my list column -->
+        <div class="mylist">
+            <h3 class="mylisttext">My lists</h3>
+            <div class="personal">
+                <p class="personaltext">Personal</p>
+            </div>
+            <div class="work">
+                <p class="worktext">Work</p>
+            </div>
+            <div class="grocery">
+                <p class="grocerytext">Grocery list</p>
+            </div>
+        </div>
+        <!-- my tags column -->
+        <div class="tags">
+            <h3 class="tagtext">Tags</h3>
+            <div class="triority">
+                <p class="prioritytext">Priority</p>
+            </div>
+        </div>
+    </div>
+    <div class="teammidbox">
+        <h2 class="teamheadline">Good Afternoon, Hardik</h2>
+        <p class="teambheadline">What’s your plan for today?</p>
+        <div><input type="teamtext" placeholder="Enter your task" class="addtask"></div>
+
+
+    </div>
+    <div class="teamrightbox">
+        <button class="teamyesterday">
+            <p class="teamyesterdaytext">From yesterday</p>
+        </button>
+        <button class="teamyesterday1">
+            <p class="teamyesterdaytext1">Due today</p>
+        </button>
+        <button class="teamyesterday2">
+            <p class="teamyesterdaytext2">Connect your google calender</p>
+        </button>
+        <button class="teamyesterday3">
+            <p class="teamyesterdaytext3">Task</p>
+        </button>
+
+    </div>
+
+</body>
+
+</html>

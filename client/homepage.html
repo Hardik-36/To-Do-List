@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style>
+        nav {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+
+        }
+
+        a {
+            padding: 1vw;
+            margin: 0.5vw;
+
+            font-size: 1.5rem;
+        }
+
+        .image {
+
+
+            float: left;
+        }
+
+        .img {
+            position: absolute;
+            width: 17vw;
+            height: 22vh;
+        }
+
+        .home {
+            margin-left: 60vw;
+            margin-top: 0;
+        }
+
+        .tophead {
+            font-weight: 900;
+            font-style: bold;
+            font-size: 3vw;
+            margin-top: 25vh;
+            margin-left: 25vh;
+            color: rgba(43, 3, 122, 0.71);
+        }
+
+        .bottomhead {
+            font-size: 1.5vw;
+            margin-top: 2vh;
+            margin-left: 52vh;
+            color: rgba(88, 14, 236, 0.501);
+        }
+
+        .startbutton {
+            background-color: rgb(170, 9, 9);
+            width: 11vw;
+            height: 8vh;
+            border-radius: 1.6vw;
+            margin-left: 43vw;
+            margin-top: 1vh;
+            transition: 1s ease-in-out;
+            position: absolute;
+
+        }
+
+        .start {
+            margin-top: 0;
+            color: white;
+            font-weight: 500;
+            font-size: 1.5vw;
+            position: absolute;
+
+        }
+        
+
+
+        .startbutton:hover {
+            background-color: rgb(1, 1, 1);
+            transition: 1s ease-in-out;
+            font-size: 3vw;
+            width: 12vw;
+            height: 9vh;
+            position: absolute;
+
+        }
+        @keyframes fadeEffect {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Apply the animation to tophead and bottomhead */
+        .tophead
+         {
+            animation: fadeEffect 8s infinite; /* Adjust the duration as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <nav>
+            <div class="image">
+                <img src="logo.png" alt="" class="img">
+            </div>
+            <div class="tags">
+                <a href="#" class="home">HOME</a>
+
+
+                <a href="login.html" class="login">LOG-IN</a>
+
+
+                <a href="#" class="pricing">PRICING</a>
+
+
+                <a href="#" class="features">FEATURES</a>
+            </div>
+
+
+        </nav>
+    </div>
+    <div class="headline">
+        <pre class="tophead">
+                Organize your
+            work and life, finally.</pre>
+        <pre class="bottomhead">
+                Become focused, organized, and 
+                calm with Todoist. The worlds #1 
+                task manager and to-do list app.
+            </pre>
+    </div>
+    <div class="startbutton">
+        <a href="signup.html" class="start">
+            Start for free
+        </a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        .bigbox {
+           
+            background-color: #3E4FA4;
+            width: 60vw;
+            height: 70vh;
+            margin-left: 18vw;
+            margin-top: 15vh;
+            border-radius: 2vw;
+            position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+
+        .bigbox .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pre5,
+        .pre6 {
+            opacity: 1;
+            animation: jumpAnimation 2s;
+            display: inline-block;
+        }
+
+        @keyframes jumpAnimation {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .justme {
+            background-color: rgb(246, 186, 66);
+            
+            width: 20vw;
+            height: 34vh;
+            display: inline-block;
+            position: absolute;
+            margin-top: 25vh;
+            margin-left: 10vw;
+            border-radius: 2vw;
+            transition: transform 0.3s ease;
+            color: black;
+        }
+
+        .team {
+            background-color: rgb(246, 186, 66);
+            /* background-color:rgb(243, 188, 36); */
+            /* background-color:rgb(252, 186, 3); */
+            width: 20vw;
+            height: 34vh;
+            display: inline-block;
+            margin-top: 25vh;
+            margin-left: 32vw;
+            border-radius: 2vw;
+            transition: transform 0.3s ease;
+            color: black;
+        }
+
+        .circle {
+            border-radius: 100vw;
+            background-color: rgb(40, 116, 166);
+            width: 7vw;
+            height: 15vh;
+            position: absolute;
+            margin-left: 6vw;
+            margin-top: 4vh;
+        }
+
+        .circleOne {
+            margin-top: 4vh;
+            margin-left: 6vw;
+            width: 6vw;
+            height: 6vw;
+            border-radius: 50%;
+            border: 0.5vw solid rgb(40, 116, 166);
+            border-bottom: 0;
+        }
+
+        .circleTwo {
+            margin-top: 1vh;
+            margin-left: 0.5vw;
+            width: 4vw;
+            height: 4vw;
+            border-radius: 50%;
+            border: 0.5vw solid rgb(40, 116, 166);
+            border-bottom: 0;
+        }
+
+        .circleThree {
+            margin-top: 1vh;
+            margin-left: 0.5vw;
+            width: 2vw;
+            height: 2vw;
+            border-radius: 50%;
+            border: 0.5vw solid rgb(40, 116, 166);
+            border-bottom: 0;
+        }
+
+        .pre1 {
+            margin-top: 20vh;
+            position: absolute;
+            font-size: 2vw;
+            font-weight: 700;
+            margin-left: 0.1vw;
+            transition: opacity 0.3s ease;
+            animation: fadeAnimation 4s infinite;
+
+        }
+
+        .pre2 {
+            margin-top: 25vh;
+            position: absolute;
+            font-size: 1vw;
+            font-weight: 500;
+            margin-left: 0.1vw;
+            transition: opacity 0.3s ease;
+            animation: fadeAnimation 4s infinite;
+
+        }
+
+        .pre3 {
+            margin-top: 2.3vh;
+            position: absolute;
+            font-size: 2vw;
+            font-weight: 700;
+            transition: opacity 0.5s ease;
+            animation: fadeAnimation 6s infinite;
+
+
+        }
+
+        .pre4 {
+            margin-top: 7vh;
+            position: absolute;
+            font-size: 1vw;
+            font-weight: 500;
+            transition: opacity 0.5s ease;
+            animation: fadeAnimation 6s infinite;
+
+        }
+
+        .pre5 {
+            position: absolute;
+            font-size: 2vw;
+            font-weight: 900;
+
+        }
+
+        .pre6 {
+
+            position: absolute;
+            font-size: 1.2vw;
+            font-weight: 500;
+        }
+
+        @keyframes fadeAnimation {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            25%,
+            75% {
+                opacity: 1;
+            }
+        }
+
+        .link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+       
+        .justme:hover,
+        .team:hover {
+            transform: scale(1.1);
+        }
+
+        .justme:hover .pre1,
+        .justme:hover .pre2 {
+            opacity: 1;
+        }
+
+        .team:hover .pre3,
+        .team:hover .pre4,
+        .team:hover .pre5,
+        .team:hover .pre6 {
+            opacity: 1;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="bigbox">
+
+        <pre class="pre5">
+
+  Hey Hardik maheshwari, how do you plan to use Any.do?
+      </pre>
+        <pre class="pre6">
+
+
+
+
+                    We'll streamline your setup experience accordingly
+            </pre>
+
+
+        <div class="justme">
+            <a href="taskenter.html">
+                <span class="link"></span>
+            </a>
+
+            <div class="circle">
+            </div>
+            <pre class="pre1">
+      Just me</pre>
+            <pre class="pre2">
+  Easily manage your work, life and 
+        everything in between
+            </pre>
+
+
+        </div>
+        <div class="team">
+            <a href="withmyteampage.html">
+                <span class="link"></span>
+            </a>
+            <div class="circleOne">
+                <div class="circleTwo">
+                    <div class="circleThree"></div>
+
+                </div>
+
+            </div>
+            <pre class="pre3">
+   With my team
+            </pre>
+            <pre class="pre4">
+ Easily manage your team’s work with 
+ project boards, tasks, chat & more
+            </pre>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

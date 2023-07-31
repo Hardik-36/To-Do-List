@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task enter</title>
+    <style>
+        .bigbox2 {
+            /* background-color: rgb(5, 102, 141); */
+            background-color: rgb(40, 116, 166);
+            /* background-color:rgb(68, 1, 83); */
+            width: 70vw;
+            height: 82vh;
+            margin-left: 15vw;
+            margin-top: 11vh;
+            border-radius: 2vw;
+            position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+
+        .bigbox2 .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .taskbox {
+            background-color: rgb(246, 186, 66);
+            /* background-color:rgb(243, 188, 36); */
+            /* background-color:rgb(252, 186, 3); */
+            width: 28vw;
+            height: 55vh;
+            display: inline-block;
+            position: absolute;
+            margin-top: 14vh;
+            margin-left: 5vw;
+            border-radius: 2vw;
+            transition: transform 0.3s ease;
+            color: black;
+        }
+        .taskbox:hover,
+        .taskbox1:hover {
+            transform: scale(1.1);
+        }
+
+        .taskbox1 {
+            background-color: rgb(246, 186, 66);
+
+            /* background-color:rgb(243, 188, 36); */
+            /* background-color:rgb(252, 186, 3); */
+            width: 28vw;
+            height: 55vh;
+            display: inline-block;
+            margin-top: 14vh;
+            margin-left: 36vw;
+            border-radius: 2vw;
+            transition: transform 0.3s ease;
+            color: black;
+        }
+
+        h1 {
+            margin-left: 7vw;
+        }
+
+        .task1 {
+            position: absolute;
+            display: inline-block;
+            margin-top: 2vh;
+            margin-left: 2.6vw;
+            width: 21vw;
+            height: 4vh;
+            border-radius: 2vw;
+            padding: 0.5vw;
+        }
+
+        input[type='text']::placeholder {
+            text-align: center;
+
+        }
+
+        .task2 {
+            position: absolute;
+            display: inline-block;
+            margin-top: 11vh;
+            margin-left: 2.6vw;
+            width: 21vw;
+            height: 4vh;
+            border-radius: 2vw;
+            padding: 0.5vw;
+        }
+
+        .task3 {
+            position: absolute;
+            display: inline-block;
+            margin-top: 20vh;
+            margin-left: 2.6vw;
+            width: 21vw;
+            height: 4vh;
+            border-radius: 2vw;
+            padding: 0.5vw;
+        }
+
+        .button1 {
+
+            width: 8vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 28vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 4vw;
+
+        }
+
+        .button1:hover {
+            transition: 1s ease-in-out;
+            background: #4F95DA;
+        }
+
+        .button2 {
+
+            width: 8vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 28vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 15vw;
+
+        }
+
+        .button2:hover {
+            transition: 1s ease-in-out;
+            background: #4F95DA;
+        }
+
+        .button3 {
+
+            width: 8vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 35vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 9.5vw;
+
+        }
+
+        .button3:hover {
+            transition: 1s ease-in-out;
+            background: #4F95DA;
+        }
+        .enter1{
+            position: absolute;
+            display: inline-block;
+            margin-top: 13.5vh;
+            margin-left: 2.6vw;
+            width: 21vw;
+            height: 4vh;
+            border-radius: 2vw;
+            padding: 0.5vw; 
+            background: transparent;
+            border-top:0 ;
+            border-left:0 ;
+            border-right:0 ;
+            border-bottom:0 ;
+        }
+        .enter2{
+            position: absolute;
+            display: inline-block;
+            margin-top: 22vh;
+            margin-left: 2.6vw;
+            width: 21vw;
+            height: 4vh;
+            border-radius: 2vw;
+            padding: 0.5vw;
+            background: transparent;
+            border-top:0 ;
+            border-left:0 ;
+            border-right:0 ;
+            border-bottom:0 ;
+        }
+        .enter3{
+            position: absolute;
+            display: inline-block;
+            margin-top: 31vh;
+            margin-left: 2.6vw;
+            width: 21vw;
+            height: 4vh;
+            border-radius: 2vw;
+            padding: 0.5vw;
+            background: transparent;
+            border-top:0 ;
+            border-left:0 ;
+            border-right:0 ;
+            border-bottom:0 ;
+        }
+        .continue{
+            width: 10vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 72vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 56vw;
+           color: black;
+           font-size: 1.2vw;
+           font-weight: 600;
+
+        }
+        .continue:hover {
+            transition: 1s ease-in-out;
+            background: #02070b;
+            color: white;
+
+        }
+        .link1{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox2">
+        <button class="continue" id="continue-button">
+            <a href="todopage.html">
+                <span class="link1"></span>
+            </a>
+            Continue
+        </button>
+
+        <div class="taskbox">
+            <h1>Add your tasks</h1>
+<!-- ... your existing HTML code ... -->
+<input type="text" onclick="addTextToInput1(this.innerText)" oninput="updateSecondTaskBox(1, this.value)" class="task1 fill" placeholder="Enter your first task" name="task">
+<input type="text" class="task2 fill" placeholder="Enter your second task" name="task" oninput="updateSecondTaskBox(2, this.value)">
+<input type="text" class="task3 fill" placeholder="Enter your third task" name="task" oninput="updateSecondTaskBox(3, this.value)">
+<!-- ... your existing HTML code ... -->
+            <button onclick="addTextToInput(this.innerText)" class="button1">Clean Your Room</button>
+            <button onclick="addTextToInput(this.innerText)" class="button2">Do Laundry</button>
+            <button onclick="addTextToInput(this.innerText)" class="button3">Call Back...</button>
+
+
+        </div>
+        <div class="taskbox1" id="taskBox2">
+            <input type="text" class="enter1 filling"  name="task">
+            <input type="text" class="enter2 filling"  name="task">
+            <input type="text" class="enter3 filling"  name="task">
+        </div>
+        
+
+
+    </div>
+    
+    </div>
+
+
+</body>
+<script>
+    function updateSecondTaskBox(taskNumber, value) {
+    var inputFields = document.querySelectorAll("input.filling");
+    if (inputFields[taskNumber - 1]) {
+        inputFields[taskNumber - 1].value = value;
+    }
+}
+
+    function addTextToInput(buttonText) {
+        var inputFields = document.querySelectorAll("input.fill");
+        for (var i = 0; i < inputFields.length; i++) {
+            if (inputFields[i].value === "") {
+                inputFields[i].value = buttonText;
+                localStorage.setItem(`task${i + 1}`, buttonText);
+
+                return;
+            }
+
+
+        }
+    }
+    function addTextToInput1(inputtext) {
+        var inputFields = document.querySelectorAll("input.filling");
+        for (var i = 0; i < inputFields.length; i++) {
+            if (inputFields[i].value === "") {
+                inputFields[i].value = inputtext;
+                localStorage.setItem(`task${i + 1}`, inputtext);
+
+                return;
+            }
+        }
+    }
+</script>
+<script>
+   
+let tasksArray = [];
+
+document.getElementById('continue-button').addEventListener('click', () => {
+  const inputFields = document.querySelectorAll("input.fill");
+  
+  for (const inputField of inputFields) {
+    const task = inputField.value.trim();
+    if (task !== "") {
+      tasksArray.push(task);
+    }
+  }
+  
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
+  
+  window.location.href = "todopage.html";
+});
+
+</script>
+</html>

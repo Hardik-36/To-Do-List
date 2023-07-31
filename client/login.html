@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #3E4FA4;
+            font-size: 3vw;
+        }
+
+        input:required::after {
+            content: "*";
+            color: red;
+        }
+
+        .form {
+            width: 25vw;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            font-size: 1em;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .checkbox {
+            position: absolute;
+            margin-top: 3vh;
+            margin-left: 2vw;
+            color: #333;
+        }
+
+        .login {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #7C57F5;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 10vh;
+        }
+
+        .login:hover {
+            background-color: #3E4FA4;
+        }
+
+        .star {
+            color: red;
+        }
+
+        .para {
+            position: absolute;
+            width: 25vw;
+            margin-left: 5vw;
+            font-size: 1.2vw;
+            margin-bottom: 35vh;
+        }
+
+        @media (max-width: 914px) {
+            .form {
+                width: 65vw;
+            }
+            .form h1 {
+                font-size: 4vw;
+            }
+            .checkbox {
+                margin-top: 4vh;
+                margin-left: 1vw;
+            }
+            .para {
+                width: 30vh;
+                margin-top: 2.2vh;
+                font-size: 1em;
+                margin-left: 7vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <form action="http://localhost:8080/api/login" method="post" id="login-form">
+            <h1>Login</h1>
+            <div class="input-group">
+                <label for="name">User Name <span class="star">*</span></label>
+                <input type="text" id="name" name="UserName" placeholder="User Name" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password <span class="star">*</span></label>
+                <input type="password" id="password" name="Password" placeholder="Password" required>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                    Remember me
+                </label>
+            </div>
+            <div class="loginbutton">
+                <button class="login" type="submit">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="login.js"></script>
+</html>

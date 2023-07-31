@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+            background-color: lightblue;
+        }
+
+        .outer-box {
+
+            position: absolute;
+            margin-right: 58vw;
+            width: 25vw;
+
+
+        }
+
+        .profile-container {
+
+            align-items: center;
+            justify-content: center;
+            width: 30vw;
+            height: 70vh;
+            margin-top: 10vh;
+            background-color: #fff;
+            border-radius: 1vw;
+            box-shadow: 0 0 2vw rgba(0, 0, 0, 0.2);
+            padding: 4vh;
+            position: absolute;
+            margin-left: 35vw;
+        }
+
+        .profile-logo {
+            width: 9vw;
+
+            height: 9vw;
+
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: absolute;
+            margin-top: 8vh;
+            margin-bottom: 35vh;
+            margin-left: 10vw;
+
+
+        }
+
+        .profile-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .profile-info {
+            text-align: center;
+            margin-bottom: 40px;
+            position: absolute;
+        }
+
+        .options {
+
+            align-items: center;
+            position: absolute;
+            display: inline-block;
+
+        }
+
+        .options button {
+            /* margin: 5px; */
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            position: absolute;
+        }
+
+        .username {
+            position: absolute;
+            margin-top: 30vh;
+            margin-left: 10vw;
+
+            width: 10vw;
+
+        }
+
+        .email {
+            position: absolute;
+            margin-top: 35vh;
+            margin-left: 10vw;
+            font-size: 1.2vw;
+            width: 10vw;
+        }
+
+        .options {
+            position: absolute;
+        }
+
+        .options button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            position: absolute;
+        }
+
+
+        .signout-btn {
+            background-color: #ff5722;
+            margin-top: 40vh;
+            position: absolute;
+            margin-top: 58vh;
+            margin-left: 10vw;
+            width: 10vw;
+        }
+
+
+        .delete-account-btn {
+            background-color: #ff5722;
+            position: absolute;
+            margin-top: 46vh;
+            margin-left: 9vw;
+            width: 10vw;
+            margin-left: 20vw;
+        }
+
+        .reset-password-btn {
+            background-color: #ff5722;
+            position: absolute;
+            margin-top: 46vh;
+            width: 10vw;
+            margin-left: 1vw;
+        }
+
+
+        #resetPasswordModal {
+
+            transform: translate(-50%, -50%);
+            padding: 2vw;
+            background-color: white;
+            box-shadow: 0px 1vw 2vw rgba(0, 0, 0, 0.2);
+            position: absolute;
+            margin-left: 15vw;
+            width: 28vw;
+            height: 48vh;
+            margin-top: 35vh;
+            z-index: 1;
+        }
+
+        .reset {
+            position: absolute;
+            margin-top: 5vh;
+            font-size: 1.7vw;
+        }
+
+        .emailreset {
+            position: absolute;
+            margin-top: 15vh;
+            margin-left: 5vw;
+            width: 25vw;
+            font-size: 1.1vw;
+        }
+
+        #emailInput {
+            position: absolute;
+            margin-top: 20vh;
+            margin-left: 5vw;
+            width: 15vw;
+            height: 4vh;
+        }
+
+        #submitResetBtn {
+            position: absolute;
+            margin-top: 30vh;
+            margin-left: 5vw;
+            width: 15vw;
+            background: black;
+            color: white;
+
+        }
+
+        #delteaccountModal {
+
+            transform: translate(-50%, -50%);
+            padding: 2vw;
+            background-color: white;
+            box-shadow: 0px 1vw 2vw rgba(0, 0, 0, 0.2);
+            position: absolute;
+            margin-left: 15vw;
+            width: 28vw;
+            height: 48vh;
+            margin-top: 35vh;
+            z-index: 1;
+        }
+
+        .delete {
+            position: absolute;
+            margin-top: 5vh;
+            font-size: 1.7vw;
+        }
+
+        .emailreset {
+            position: absolute;
+            margin-top: 15vh;
+            margin-left: 5vw;
+            width: 25vw;
+            font-size: 1.1vw;
+        }
+
+        #emailInput {
+            position: absolute;
+            margin-top: 20vh;
+            margin-left: 5vw;
+            width: 15vw;
+            height: 4vh;
+        }
+
+        #submitdelteBtn {
+            position: absolute;
+            margin-top: 30vh;
+            margin-left: 5vw;
+            width: 15vw;
+            background: black;
+            color: white;
+
+        }
+        .link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-box">
+        <div class="profile-container">
+            <div class="profile-logo">
+                <img src="path/to/default-profile-logo.png" alt="#">
+            </div>
+            <div class="profile-info">
+                <h2 class="username">User Name</h2>
+                <p class="email">Email: user@example.com</p>
+            </div>
+            <div class="options">
+                <button class="reset-password-btn" id="resetPasswordBtn">Reset Password</button>
+                <div id="resetPasswordModal" style="display: none;">
+                    <div class="resetpasswordbox"><h2 class="reset">Reset Password</h2>
+                        <p class="emailreset">Enter your email address to reset your password:</p>
+                        <input type="email" id="emailInput" placeholder="Enter your email"></div>
+                    <button id="submitResetBtn">Submit</button>
+                </div>
+                <button class="signout-btn"><a href="homepage.html">
+                    <span class="link"></span>
+                </a>Sign Out</button>
+                <button class="delete-account-btn" id="delteaccountbtn">Delete Account</button>
+                <div id="delteaccountModal" style="display: none;">
+                    <h2 class="delete">Delete account</h2>
+                    <p class="emailreset">Enter your email address to delete your account:</p>
+                    <input type="email" id="emailInput" placeholder="Enter your email">
+                    <button id="submitdelteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    // Reset Password functionality
+    const resetPasswordBtn = document.getElementById('resetPasswordBtn');
+    const resetPasswordModal = document.getElementById('resetPasswordModal');
+    const submitResetBtn = document.getElementById('submitResetBtn');
+    const resetpasswordbox=document.getElementsByClassName('resetpasswordbox');
+
+    function openResetPasswordModal() {
+        resetPasswordModal.style.display = 'block';
+    }
+
+    function closeResetPasswordModal() {
+        resetPasswordModal.style.display = 'none';
+    }
+
+    resetPasswordBtn.addEventListener('click', openResetPasswordModal);
+
+    function resetPassword() {
+        const emailInput = document.getElementById('emailInput').value;
+        // existing logic for resetting the password
+        alert('A password reset link has been sent to ' + emailInput);
+        closeResetPasswordModal();
+    }
+    submitResetBtn.addEventListener('click', resetPassword);
+    // New event listener to close the reset password modal when clicking outside
+    window.addEventListener('click', function(event) {
+    if (!resetPasswordModal.contains(event.target)) {
+      document.body.removeChild(resetPasswordModal);
+      window.removeEventListener('mousedown', arguments.callee);
+    }
+  });
+    // Delete Account functionality
+    const delteaccountbtn = document.getElementById('delteaccountbtn');
+    const delteaccountModal = document.getElementById('delteaccountModal');
+    const submitdeleteBtn = document.getElementById('submitdelteBtn');
+    function opendelteaccountModal() {
+        delteaccountModal.style.display = 'block';
+    }
+
+    function closedelteaccountModal() {
+        delteaccountModal.style.display = 'none';
+    }
+
+    delteaccountbtn.addEventListener('click', opendelteaccountModal);
+
+    function delteaccount() {
+        const emailInput = document.getElementById('emailInput').value;
+        // Your existing logic for deleting the account
+        alert('Account with email ' + emailInput + ' has been deleted.');
+        closedelteaccountModal();
+    }
+
+    submitdeleteBtn.addEventListener('click', delteaccount);
+
+    // New event listener to close the delete account modal when clicking outside
+    window.addEventListener('mousedown', function (event) {
+        if (event.target != delteaccountModal) {
+            closedelteaccountModal();
+        }
+    });
+</script>
+
+
+</html>

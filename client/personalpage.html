@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grocerry</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #settings-button {
+            padding: 0.5vw 0.8vw;
+            display: inline-block;
+            background-color: #007bff;
+            background: transparent;
+            color: #0c0707;
+            border: 0.15vw solid black;
+            border-radius: 80vw;
+            width: 2.8vw;
+            height: 6vh;
+            cursor: pointer;
+            margin-top: 5.5vh;
+            margin-left: 1.1vw;
+            position: absolute;
+        }
+
+        #settings-button i {
+            margin-right: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 20vw;
+
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            margin-top: 11vh;
+            margin-left: 2vw;
+            border-radius: 2vw;
+            height: 29vh;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.5em;
+            margin: 1vw;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .custname {
+            display: inline-block;
+            margin-left: 4.7vw;
+            margin-top: 7.2vh;
+            position: absolute;
+            font-size: 1.7vw;
+
+        }
+
+        .custn {
+            position: absolute;
+            margin-left: 4.7vw;
+            margin-top: 8.5vh;
+
+        }
+
+        .days {
+            margin-top: 18vh;
+        }
+
+        .fa-calendar {
+            position: absolute;
+            margin-top: .1vh;
+            margin-left: 1.4vw;
+        }
+
+        .fa-cloud {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .fa-bars {
+            margin-top: 13vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .mylist {
+            margin-top: 40vh;
+        }
+
+        .tags {
+            margin-top: 30vh;
+        }
+
+        .mydays {
+            position: absolute;
+            margin-left: 4vw;
+            margin-top: 0.1vh;
+            font-size: 1.5em;
+        }
+
+        .sevenday {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 4vw;
+            font-size: 1.5em;
+        }
+
+        .mytask {
+            margin-left: 4vw;
+            margin-top: 13vh;
+            position: absolute;
+            font-size: 1.5em;
+        }
+
+        .mylisttext {
+            margin-left: 1.4vw;
+            font-size: 1.8em;
+        }
+
+        .personaltext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 1.5vh;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .worktext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .grocerytext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 12.5vh;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .tags {
+            margin-top: 22vh;
+            margin-left: 1.4vw;
+        }
+
+        .prioritytext {
+        
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .tagtext {
+            font-size: 1.8em;
+
+            position: absolute;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftbox {
+            display: inline-block;
+            width: 18vw;
+            height: 99.9vh;
+            background-color: rgb(240, 240, 244);
+            position: absolute;
+            background-color: white;
+            background-color: rgb(40, 116, 166);
+            color: white;
+        }
+        body{
+            background-color: lightblue;
+        }
+
+        .grocerybox {
+            width: 38vw;
+            height: 80vh;
+            background-color:white;
+            margin-left: 22vw;
+            margin-top: 12vh;
+            position: absolute;
+            border-radius: 0.8vw;
+
+
+        }
+
+        .inputgrocery {
+            margin-top: 71vh;
+            position: absolute;
+            margin-left: 2vw;
+            width: 34vw;
+            height: 5vh;
+            border-radius: 1vw;
+            font-size: 1.3vw;
+            background-color: lightblue;
+        }
+
+        input[type='text']::placeholder {
+            text-align: center;
+            color: rgb(17, 13, 7);
+            font-size: 1.3vw;
+
+        }
+        .groceryhead{
+            width: 14vw;
+            height: 4vh;
+            border: 0.3vw solid black;
+            border-radius: 1vw;
+            position: absolute;
+            margin-left:22vw;
+            margin-top: 4vh;
+            background-color:white ;
+            
+        }
+        .groceryheadtext{
+            position: absolute;
+            margin-left: 2.7vw;
+            font-size: 1.5em;
+           
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .signout-prompt {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .signout-prompt h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .signout-prompt button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .signout-prompt button:hover {
+            background-color: #0056b3;
+        }
+        .link2{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leftbox">
+        <div class="setting">
+            <div class="dropdown">
+                <button id="settings-button">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">My Profile</a>
+                    <a href="#">About</a>
+                    <a href="#" id="signout-link">Signout</a>
+                </div>
+            </div>
+
+            <h4 class="custname">Hardik</h4>
+            <p class="custn">Free Plan</p>
+        </div>
+
+        <!-- now my day div is starting -->
+        <div class="days">
+            <i class="fa fa-calendar " style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="myday">
+                <p class="mydays">My day</p>
+
+            </div>
+            <i class="fa fa-cloud" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="week">
+                <p class="sevenday">Next 7 days </p>
+            </div>
+            <i class="fa fa-bars" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="alltask">
+                <p class="mytask">All my tasks</p>
+            </div>
+
+        </div>
+
+        <!-- my list column -->
+        <div class="mylist">
+            <h3 class="mylisttext">My lists</h3>
+            <div class="personal">
+                <p class="personaltext"><a href="personalpage.html"><span class="link2"></span></a>Personal</p>
+
+            </div>
+            <div class="work">
+                <p class="worktext"><a href="workpage.html"><span class="link2"></span></a>Work</p>
+            </div>
+            <div class="grocery">
+                <p class="grocerytext"><a href="grocerylistpage.html"><span class="link2"></span></a>Grocery List</p>
+
+            </div>
+        </div>
+        <!-- my tags column -->
+        <div class="tags">
+            <h3 class="tagtext">Tags</h3>
+            <div class="priority">
+                <p class="prioritytext">Priority</p>
+            </div>
+        </div>
+    </div>
+    <div class="signout-prompt" id="signout-prompt">
+        <h3>Are you sure you want to sign out?</h3>
+        <button id="signout-button">Sign out</button>
+    </div>`
+    <div class="groceryhead">
+        <p class="groceryheadtext">Personal</p>
+    </div>
+    <div class="grocerybox">
+        <div class="groceryinput">
+            <input type="text" class="inputgrocery" placeholder="Enter Your task">
+        </div>
+    </div>
+</body>
+<script>
+    // JavaScript code here
+    document.getElementById("signout-link").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the link from navigating
+        document.getElementById("signout-prompt").style.display = "block"; // Display the sign-out prompt
+        
+    });
+
+    document.getElementById("signout-button").addEventListener("click", function() {
+        // Perform sign-out action here
+        window.location.href = "homepage.html";
+    });
+</script>
+
+</html>

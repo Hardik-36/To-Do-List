@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome with my team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .trackworkspace {
+            width: 60vw;
+            height: 78vh;
+            background-color: #3E4FA4;
+            margin-top: 12vh;
+            margin-left: 18vw;
+            border-radius: 1vw;
+            position: absolute;
+        }
+
+        .trackworkspacetext {
+            position: absolute;
+            margin-left: 2vw;
+            font-size: 2.2vw;
+            font-weight: 700;
+            position: absolute;
+            margin-top: 2vh;
+        }
+
+        .trackanothertextbox {
+            position: absolute;
+            margin-left: 6vw;
+            margin-top: 13vh;
+            opacity: 0.6;
+            font-size: 1.5vw;
+            font-weight: 500;
+            position: absolute;
+        }
+
+        .trackworkspacebox{
+            position: absolute;
+            margin-left: 0.2vw;
+            width: 25vw;
+            margin-top: 10vh;
+            font-size:2.5vw;
+            font-weight: 800;
+            position: absolute;
+        }
+
+        .trackworkspaceinput {
+            position: absolute;
+            margin-left: 12vw;
+            width: 30vw;
+            margin-top: 38vh;
+            font-size: 1.5em;
+            font-weight: 800;
+            position: absolute;
+            border-style: none;
+            background-color: lightcoral;
+            border: 0.1vw solid blue;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+            cursor: text;
+        }
+
+        .trackcontinue {
+            width: 10vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 65vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 48vw;
+            color: black;
+            font-size: 1.2vw;
+            font-weight: 600;
+            position: absolute;
+        }
+
+        .trackcontinue:hover {
+            transition: 1s ease-in-out;
+            background: #02070b;
+            color: white;
+        }
+
+        .link1 {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+        .setworktext{
+            font-size: 2.0vw;
+            margin-left: 21vw;
+            position: absolute;
+            width: 34vw;
+            margin-top: 12vh;
+        }
+        .inputsetup{
+            margin-top: 23vh;
+            position: absolute;
+            margin-left: 12vw;
+            width: 35vw;
+            height: 10vh;
+            font-size: 1.5vw;
+            color: grey;
+            opacity: 0.4;
+        }
+        .setupbox{
+            position: absolute;
+            margin-top: 8vh;
+        }
+        input[type='text']::placeholder {
+            text-align: center;
+            color: rgb(17, 13, 7);
+            font-size: 1.3vw;
+
+        }
+        .trackskip{
+            
+            width: 10vw;
+            height: 6vh;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            margin-top: 65vh;
+            position: absolute;
+            border-radius: 2vw;
+            background-color: white;
+            margin-left: 4vw;
+            color: black;
+            font-size: 1.2vw;
+            font-weight: 600;
+            position: absolute;
+        }
+        .trackskip:hover {
+            transition: 1s ease-in-out;
+            background: #02070b;
+            color: white;
+        }
+        .copylinkbox{
+            position: absolute;
+           
+            
+        }
+        .copylinktext{
+            width: 25vw;
+            height: 2vw;
+            border: 0.15vw solid black;
+            margin-top: 40vh;
+            margin-left:18vw;
+            text-align: center;
+            border-radius: 1vw;
+            padding: 0.5vh;
+            font-size: 1.3vw;
+            cursor: pointer;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="trackworkspace">
+        <p class="trackworkspacetext">Set up your team</p>
+        <div class="trackworkspacebox">
+            <p class="setworktext">Add your teammates</p>
+    </div>
+
+        
+        <div class="setupbox">
+            <div class="setupinput">
+                <input type="email" class="inputsetup" placeholder="Add emails seprated by commas">
+            </div>
+            <div class="copylinkbox">
+                <p class="copylinktext">Copy link form the clipboard</p>
+            </div>
+        </div>
+        <button class="trackcontinue">
+            <a href="todopage.html">
+                <span class="link1"></span>
+            </a>
+            Continue
+        </button>
+        <button class="trackskip">
+            <a href="todopage.html">
+                <span class="link1"></span>
+            </a>
+            skip
+        </button>
+    </div>
+    
+</body>
+</html>

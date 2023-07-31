@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo page</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftbox {
+            display: inline-block;
+            width: 18vw;
+            height: 99.9vh;
+            background-color: rgb(240, 240, 244);
+            position: absolute;
+            background-color: white;
+            background-color: rgb(40, 116, 166);
+            color: white;
+        }
+
+        .midbox {
+            width: 60vw;
+            background-color: aqua;
+            display: inline-block;
+            position: absolute;
+            margin-left: 18vw;
+            height: 99.9vh;
+            background-color: white;
+        }
+
+        .rightbox {
+            width: 22vw;
+            background-color: lightblue;
+            display: inline-block;
+            position: absolute;
+            margin-left: 78vw;
+            height: 99.9vh;
+        }
+
+        
+        #settings-button {
+            padding: 0.5vw 0.8vw;
+            display: inline-block;
+            background-color: #007bff;
+            background: transparent;
+            color: #0c0707;
+            border: 0.15vw solid black;
+            border-radius: 80vw;
+            width: 2.8vw;
+            height: 6vh;
+            cursor: pointer;
+            margin-top: 5.5vh;
+            margin-left: 1.1vw;
+            position: absolute;
+        }
+
+        #settings-button i {
+            margin-right: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 20vw;
+
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            margin-top: 11vh;
+            margin-left: 2vw;
+            border-radius: 2vw;
+            height: 29vh;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.5em;
+            margin: 1vw;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .custname {
+            display: inline-block;
+            margin-left: 4.7vw;
+            margin-top: 7.2vh;
+            position: absolute;
+            font-size: 1.7vw;
+
+        }
+
+        .custn {
+            position: absolute;
+            margin-left: 4.7vw;
+            margin-top: 8.5vh;
+
+        }
+
+        .days {
+            margin-top: 18vh;
+        }
+
+        .fa-calendar {
+            position: absolute;
+            margin-top: .1vh;
+            margin-left: 1.4vw;
+        }
+
+        .fa-cloud {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .fa-bars {
+            margin-top: 13vh;
+            position: absolute;
+            margin-left: 1.4vw;
+        }
+
+        .mylist {
+            margin-top: 40vh;
+        }
+
+        .tags {
+            margin-top: 30vh;
+        }
+
+        .mydays {
+            position: absolute;
+            margin-left: 4vw;
+            margin-top: 0.1vh;
+            font-size: 1.5em;
+        }
+
+        .sevenday {
+            margin-top: 7vh;
+            position: absolute;
+            margin-left: 4vw;
+            font-size: 1.5em;
+        }
+
+        .mytask {
+            margin-left: 4vw;
+            margin-top: 13vh;
+            position: absolute;
+            font-size: 1.5em;
+        }
+
+        .mylisttext {
+            margin-left: 1.4vw;
+            font-size: 1.8em;
+        }
+
+        .personaltext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 1.5vh;
+            position: absolute;
+        }
+
+        .worktext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .grocerytext {
+            margin-left: 1.4vw;
+            font-size: 1.5em;
+            margin-top: 12.5vh;
+            position: absolute;
+        }
+
+        .tags {
+            margin-top: 22vh;
+            margin-left: 1.4vw;
+        }
+
+        .prioritytext {
+            /* margin-left: 1.4vw; */
+            font-size: 1.5em;
+            margin-top: 7vh;
+            position: absolute;
+        }
+
+        .tagtext {
+            font-size: 1.8em;
+
+            position: absolute;
+        }
+
+        .headline {
+            margin-top: 7.2vh;
+            margin-left: 5vh;
+            font-size: 2em;
+            position: absolute;
+        }
+
+        .bheadline {
+            margin-top: 13vh;
+            margin-left: 5vh;
+            font-size: 1.5em;
+            font-weight: 800;
+            color: grey;
+            opacity: 0.5;
+            position: absolute;
+
+        }
+
+        .addtask {
+            margin-top: 90vh;
+            background-color: rgb(116, 172, 228);
+            margin-left: 5vh;
+            color: white;
+            border-radius: 0.81vw;
+            height: 6vh;
+            width: 48vw;
+            font-size: 1.3vw;
+        }
+
+        input[type='text']::placeholder {
+            text-align: center;
+            color: antiquewhite;
+            font-size: 1.3vw;
+
+        }
+
+        .yesterday {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 16vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .yesterday:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+
+        }
+
+        .yesterday1 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 28vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .yesterday1:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+
+        }
+
+        .yesterday2 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 39.5vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1em;
+            position: absolute;
+
+        }
+
+        .yesterday2:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.1em;
+            height: 6.8vh;
+
+            /* margin-left: 1vw; */
+            transition: 1s ease-in-out;
+
+        }
+
+        .yesterday3 {
+            width: 18vw;
+            height: 6.1vh;
+            margin-left: 2vw;
+            margin-top: 52vh;
+            border-radius: 0.5vw;
+            background-color: white;
+            color: #0c0707;
+            font-size: 1.2em;
+            position: absolute;
+
+        }
+
+        .yesterday3:hover {
+            color: white;
+            background-color: #0c0707;
+            font-size: 1.5em;
+            transition: 1s ease-in-out;
+
+        }
+        .link2{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+        }
+        #task-container{
+            position: absolute;
+            margin-top: 25vh;
+            margin-left: 5vw;
+
+        }
+        #task-container li{
+            margin: 1vw;
+            padding: 1vw;
+            font-weight: 800;
+            font-size: 2.5em;
+        }
+        .link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="leftbox">
+        
+        <div class="setting">
+            <div class="dropdown">
+                <button id="settings-button">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="myprofile.html">My Profile</a>
+                    <a href="#">About</a>
+                    <a href="homepage.html">Signout</a>
+                </div>
+            </div>
+
+            <h4 class="custname">Hardik</h4>
+            <p class="custn">Free Plan</p>
+        </div>
+        <!-- now my day div is starting -->
+        <div class="days">
+            <i class="fa fa-calendar " style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="myday">
+                <p class="mydays">My day</p>
+
+            </div>
+            <i class="fa fa-cloud" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="week">
+                <p class="sevenday"> <a href="week.html"><span class="link2"></span></a>
+                    Next 7 days </p>
+            </div>
+            <i class="fa fa-bars" style="font-size:2vw;color:rgb(26, 9, 9)"></i>
+            <div class="alltask">
+                <p class="mytask">All my tasks</p>
+            </div>
+
+        </div>
+        <!-- my list column -->
+        <div class="mylist">
+            <h3 class="mylisttext">My lists</h3>
+            <div class="personal">
+
+    
+                <p class="personaltext">                <a href="personalpage.html">
+                    <span class="link"></span>
+                </a>Personal</p>
+            </div>
+            <div class="work">
+                
+    
+                <p class="worktext"><a href="workpage.html">
+                    <span class="link"></span>
+                </a>Work</p>
+            </div>
+            <div class="grocery">
+               
+    
+                <p class="grocerytext"> <a href="grocerylistpage.html">
+                    <span class="link"></span>
+                </a>Grocery list</p>
+            </div>
+        </div>
+        <!-- my tags column -->
+        <div class="tags">
+            <h3 class="tagtext">Tags</h3>
+            <div class="priority">
+                <p class="prioritytext">Priority</p>
+            </div>
+        </div>
+    </div>
+    <div class="midbox">
+        <h2 class="headline">Good Afternoon, Hardik</h2>
+        <p class="bheadline">What’s your plan for today?</p>
+        <div id="task-container">
+            <h2 >Tasks entered:</h2>
+        </div>
+
+        <div><input type="text" name="task" id="new-task" placeholder="Enter your task" class="addtask"></div>
+
+
+    </div>
+    <div class="rightbox">
+        <button class="yesterday">
+            <p class="yesterdaytext">From yesterday</p>
+        </button>
+        <button class="yesterday1">
+            <p class="yesterdaytext1">Due today</p>
+        </button>
+        <button class="yesterday2">
+            <p class="yesterdaytext2">Connect your google calender</p>
+        </button>
+        <button class="yesterday3">
+            <p class="yesterdaytext3">Task</p>
+        </button>
+
+    </div>
+    <ul id="taskList">
+        <li class="task-item" data-task-id="1">
+          Task 1 <button class="deleteBtn" data-task-id="1">Delete</button>
+        </li>
+        <li class="task-item" data-task-id="2">
+          Task 2 <button class="deleteBtn" data-task-id="2">Delete</button>
+        </li>
+        <!-- Add more tasks here -->
+      </ul>
+                  
+</body>
+<script>
+function displayTasks() {
+  const tasksContainer = document.getElementById('task-container');
+  tasksContainer.innerHTML = ""; 
+
+  const tasksArray = JSON.parse(localStorage.getItem('tasks'));
+
+  if (tasksArray && tasksArray.length > 0) {
+    const tasksList = document.createElement('ul');
+    tasksArray.forEach((task, index) => {
+      const taskItem = document.createElement('li');
+      taskItem.textContent = task;
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.setAttribute('data-task-id', index + 1);
+      deleteButton.classList.add('deleteBtn');
+
+      taskItem.appendChild(deleteButton);
+      tasksList.appendChild(taskItem);
+    });
+
+    tasksContainer.appendChild(tasksList);
+  } else {
+    tasksContainer.textContent = "No tasks entered.";
+  }
+}
+
+function addNewTask() {
+  const newTaskInput = document.getElementById('new-task');
+  const newTask = newTaskInput.value.trim();
+  if (newTask !== "") {
+    let tasksArray = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasksArray.push(newTask);
+    localStorage.setItem('tasks', JSON.stringify(tasksArray));
+    newTaskInput.value = "";
+    displayTasks();
+  }
+}
+
+window.addEventListener('load', displayTasks);
+
+document.getElementById('new-task').addEventListener('keydown', (event) => {
+  if (event.key === "Enter") {
+    addNewTask();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const taskList = document.getElementById('taskList');
+
+  taskList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('deleteBtn')) {
+      const taskId = event.target.dataset.taskId;
+      deleteTask(taskId);
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const taskList = document.getElementById('taskList');
+
+  taskList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('deleteBtn')) {
+      const taskId = event.target.dataset.taskId;
+      const taskListItem = document.querySelector(`li[data-task-id="${taskId}"]`);
+      console.log("done");
+      if (taskListItem) {
+        taskListItem.remove();
+        deleteTaskFromLocalStorage(taskId);
+      }
+    }
+  });
+});
+
+function deleteTaskFromLocalStorage(taskId) {
+  let tasksArray = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasksArray = tasksArray.filter((task, index) => index + 1 !== parseInt(taskId));
+  console.log("do do");
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
+}
+
+</script>
+</html>
